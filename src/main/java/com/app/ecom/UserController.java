@@ -32,5 +32,14 @@ public class UserController {
         // Returns 201 Created (standard for successful POST)
         return new ResponseEntity<>("User Added Successfully", HttpStatus.CREATED);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
+        boolean updated = userService.updateUser(id, updatedUser);
+        if (updated) {
+            return new ResponseEntity<>("User Updated Successfully", HttpStatus.OK);
+        }
+        return new ResponseEntity<>("User Updated Failed", HttpStatus.BAD_REQUEST);
+    }
 }
 

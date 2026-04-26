@@ -14,12 +14,20 @@ public class UserService {
         return userList;
     }
 
-    public void addUser (User users) {
+    public void addUser(User users) {
         users.setId(nextID++);
         userList.add(users);
     }
 
     public User fetchUser(Long id) {
         return userList.stream().filter(user -> user.getId().equals(id)).findFirst().get();
+    }
+
+    public boolean updateUser(Long id, User updatedUser) {
+        return userList.stream().filter(user -> user.getId().equals(id)).findFirst().map(existingUser -> {
+            existingUser.setFirstName(updatedUser.getFirstName());
+            existingUser.setLastName(updatedUser.getLastName());
+            return true;
+        }).orElse(false);
     }
 }
