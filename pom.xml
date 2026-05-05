@@ -7,12 +7,10 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <!-- ✅ UPGRADED: 4.0.5 → 4.0.6 (fixes CVE-2026-34483, CVE-2026-22740, CVE-2026-22741, GHSA-2m67-wjpj-xhg9) -->
         <version>4.0.6</version>
         <relativePath/>
     </parent>
 
-    <!-- ✅ FIXED: was "[com.app](http://com.app)" (broken markdown link) -->
     <groupId>com.app</groupId>
     <artifactId>ecom-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -39,13 +37,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-h2console</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- ✅ FIXED: was "spring-boot-starter-webmvc" (invalid artifact ID) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -55,7 +51,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!-- ✅ FIXED: was "spring-boot-starter-webmvc-test" (invalid artifact ID) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
