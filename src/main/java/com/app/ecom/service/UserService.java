@@ -100,6 +100,7 @@ public class UserService {
             addressDTO.setState(user.getAddress().getState());
             addressDTO.setCountry(user.getAddress().getCountry());
             addressDTO.setZip(user.getAddress().getZip());
+
             userResponse.setAddress(addressDTO);
         }
         return userResponse;
